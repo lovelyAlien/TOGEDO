@@ -15,7 +15,8 @@ body {
 
 .section2 {
   float: left;
-  width: 30%;
+  padding: 1rem 1.5rem;
+  width: 40%;
   max-width: 100%;
   margin: auto;
 }
