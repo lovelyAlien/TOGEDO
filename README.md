@@ -28,14 +28,14 @@
 
 
 
-|              기능               | Method |    URL     |                    request                     |          response          |
-| :-----------------------------: | :----: | :--------: | :--------------------------------------------: | :------------------------: |
-|            회원가입             |  POST  | /api/login | {'id':id, 'pw':pw, 'name':name, 'email':email} |      회원가입 데이터       |
-|             로그인              |  GET   | /api/login |               {'id':id, 'pw':pw}               |       로그인 데이터        |
-|           할 일 작성            |  POST  | /api/list  |           {'date':date, 'todo':todo}           |     할 일 작성 데이터      |
-|     할 일 리스트 전체 조회      |  GET   | /api/list  |                                                |        할 일 리스트        |
-| 검색한 유저의 할 일 리스트 조회 |  GET   | /api/list  |               query={user_name}                | 검색한 유저의 할 일 리스트 |
-|                                 |        |            |                                                |                            |
+|               기능                | Method |                  URL                  |                           request                            |                           response                           |
+| :-------------------------------: | :----: | :-----------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|         아이디 중복 확인          |  POST  |           /sign_up/check_up           |                   username_give: username                    |       jsonify({'result': 'success', 'exists': exists})       |
+|       회원가입 정보 DB 저장       |  POST  |             /sign_up/save             | {username_give: username, password_give: password, mail_give: mail} |                jsonify({'result': 'success'})                |
+|          로그인 값 입력           |  POST  |               /sign_in                |      {username_give: username,password_give: password}       |        jsonify({'result': 'success', 'token': token})        |
+|            프로필 수정            |  POST  |            /update_profile            | form_data =[{"file_give": file}, {"name_give", name}, {"about_give", about}] | jsonify({"result": "success", 'msg': '할 일을 업데이트했습니다.'}) |
+|            할 일 등록             |  POST  |              /write_todo              |             {date_give: today, todo_give: todo}              |                                                              |
+| 검색된 유저의 할 일만 보이게 하기 |  GET   | /get_list?username_give=${username} |                                                              | {"result": "success", "msg": "포스팅을 가져왔습니다.", "posts": posts} |
 
 
 
