@@ -34,7 +34,7 @@
 |       회원가입 정보 DB 저장       |  POST  |             /sign_up/save             | {username_give: username, password_give: password, email_give: email} |                jsonify({'result': 'success'})                |
 |          로그인 값 입력           |  POST  |               /sign_in                |      {username_give: username,password_give: password}       |        jsonify({'result': 'success', 'token': token})        |
 |            프로필 수정            |  POST  |            /update_profile            | form_data =[{"file_give": file}, {"name_give", name}, {"about_give", about}] | jsonify({"result": "success", 'msg': '할 일을 업데이트했습니다.'}) |
-|            할 일 등록             |  POST  |              /write_todo              |             {date_give: today, todo_give: todo}              |  jsonify({"result": "success", 'msg': '포스팅 성공'}) |                                                            |
+|            할 일 등록             |  POST  |              /write_todo              |             {date_give: today, todo_give: todo}              |  jsonify({"result": "success", 'msg': ' 성공'}) |                                                            |
 | 검색된 유저의 할 일만 보이게 하기 |  GET   | /get_list?username_give=${username} |                                                              | {"result": "success", "msg": "할 일을 가져왔습니다.", "list": list} |
 
 
