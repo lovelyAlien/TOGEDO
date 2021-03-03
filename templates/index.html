@@ -4,14 +4,14 @@
 <head>
 
     <!-- Webpage Title -->
-    <title>Home | SWEETER</title>
+    <title>Home | TOGEDO</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-    <meta property="og:title" content="스위터 - 세상을 달달하게"/>
+    <meta property="og:title" content="TOGEDO - 나는 너가 무엇을 했는지 알고있다."/>
     <meta property="og:description" content="mini project for Web Plus"/>
     <meta property="og:image" content="{{ url_for('static', filename='ogimg.png') }}"/>
     <!-- Bulma CSS -->
@@ -20,6 +20,11 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet">
+    <style>
+        .navbar-brand {
+            background-color: black;
+        }
+    </style>
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,11 +43,10 @@
 </head>
 
 <body>
-    <nav class="navbar is-fixed-top is-white" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <img src="{{ url_for('static', filename='logo.png') }}">
-                <strong class="is-sparta" style="font-family: 'Stylish', sans-serif;font-size: larger;">SWEETER</strong>
+                <strong class="is-sparta" style="font-family: 'Stylish', sans-serif;font-size: larger;">TOGEDO</strong>
             </a>
         </div>
     </nav>

@@ -1,29 +1,29 @@
 body {
-  background-color: RGBA(232, 52, 78, 0.2);
+  background-image: url("https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hcmF0aG9ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60 ");
+  background-size: cover;
   min-height: 100vh;
-  padding-top: 3.25rem;
 }
 
 .section {
   padding: 1rem 1.5rem;
-  max-width: 750px;
-  margin: auto;
+  max-width: 600px;
+  margin-right: 220px;
 }
 
 .is-sparta {
-  color: #e8344e !important;
+  color: white !important;
 }
 
 .button.is-sparta {
-  background-color: #e8344e;
+  background-color: black;
   border-color: transparent;
   color: #fff !important;
 }
 
 .button.is-sparta.is-outlined {
-  background-color: transparent;
-  border-color: #e8344e;
-  color: #e8344e !important;
+  background-color: black;
+
+  color: white !important;
 }
 
 .modal-content {
