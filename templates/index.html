@@ -25,6 +25,25 @@
         .search {
             align-items: center;
         }
+        .navbar-brand{
+            width: 20%;
+        }
+        .navbar-menu{
+            width: 0%;
+        }
+        .navbar-end{
+            width: 20%;
+        }
+        .is_sparta{
+            font-family: 'Jua', sans-serif;
+            /* font-size:13px; */
+        }
+        .textarea::placeholder {
+            font-size:xx-large;
+            font-weight: bold;
+            text-align:center;
+        }
+
     </style>
 
     <!-- JS -->
@@ -44,25 +63,29 @@
 </head>
 
 <body>
+    <!-- 내비게이션 바 -->
     <nav class="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
                 <img src="{{ url_for('static', filename='logo.png') }}">
-                <strong class="is-sparta" style="font-family: 'Stylish', sans-serif;font-size: larger;">TOGEDO!</strong>
+                <strong class="is-sparta">TOGEDO!</strong>
             </a>
-            <nav id="btns-me" class="level is-mobile">
-                <a class="button level-item has-text-centered is-sparta" aria-label="edit"
-                onclick='$("#modal-edit").addClass("is-active")'>
-                    프로필 수정&nbsp;&nbsp;&nbsp;<span class="icon is-small"><i class="fa fa-pencil"
-                                                                        aria-hidden="true"></i></span>
-                </a>
-            
-                <a class="button level-item has-text-centered is-sparta is-outlined" aria-label="logout"
-                onclick="sign_out()">
-                    로그아웃&nbsp;&nbsp;&nbsp;<span class="icon is-small"><i class="fa fa-sign-out"
-                                                                        aria-hidden="true"></i></span>
-                </a>
-            </nav>
+        </div>
+        <div class="navbar-menu"> 
+        </div>
+        <div class="navbar-end">
+            <a class="navbar-item button level-item has-text-centered is-sparta" aria-label="edit"
+            onclick='$("#modal-edit").addClass("is-active")'>
+                프로필 수정&nbsp;&nbsp;&nbsp;<span class="icon is-small"><i class="fa fa-pencil"
+                                                                    aria-hidden="true"></i></span>
+            </a>
+        
+            <a class="navbar-item button level-item has-text-centered is-sparta is-outlined" aria-label="logout"
+            onclick="sign_out()">
+                로그아웃&nbsp;&nbsp;&nbsp;<span class="icon is-small"><i class="fa fa-sign-out"
+                                                                    aria-hidden="true"></i></span>
+            </a>
+        </div>
             <!-- 프로필 수정 모달 -->
             <div class="modal" id="modal-edit">
                 <div class="modal-background" onclick='$("#modal-edit").removeClass("is-active")'></div>
@@ -131,7 +154,7 @@
         </div>
     </nav>
 
-<!-- 게시글 부분 -->
+    <!-- 게시글 부분 -->
     <section class="section">
         <div id="post-box" class="container">
             <div class="box">
@@ -143,7 +166,7 @@
                         </a>
                     </div>
                     <div class="media-content">
-                        <div class="content">
+                        <div class="content" style="white-space:pre;">
                             <p>
                                 <strong>홍길동</strong> <small>@username</small> <small>분 전</small>
                                 <br>
@@ -163,7 +186,7 @@
                         <div class="media-content">
                             <div class="field">
                                 <p class="control">
-                                    <textarea id="textarea-post" class="textarea" placeholder="리스트를 작성해주세요" rows="10"></textarea>
+                                    <textarea id="textarea-post" class="textarea" placeholder="To do list!!" rows="10"></textarea>
                                 </p>
                             </div>
                             <nav class="level is-mobile">
