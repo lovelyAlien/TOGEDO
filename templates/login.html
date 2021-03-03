@@ -152,6 +152,17 @@
             } else {
                 $("#help-password2").text("비밀번호가 일치합니다.").removeClass("is-danger").addClass("is-success")
             }
+            if (email == "") {
+                $("#help-email").text("필수입력 항목입니다.").removeClass("is-safe").addClass("is-danger")
+                $("#input-email").focus()
+                return;
+            } else if (!is_email(email)) {
+                $("#help-email").text("올바른 이메일 형식이어야합니다").removeClass("is-safe").addClass("is-danger")
+                $("#input-email").focus()
+                return;
+            } else {
+                $("#help-email").text("사용가능한 이메일입니다").removeClass("is-danger").addClass("is-success")
+            }
             $.ajax({
                 type: "POST",
                 url: "/sign_up/save",
@@ -177,6 +188,7 @@
             $("#help-id").toggleClass("is-hidden")
             $("#help-password").toggleClass("is-hidden")
             $("#help-password2").toggleClass("is-hidden")
+            $("#help-email").toggleClass("is-hidden")
         }
 
         function is_nickname(asValue) {
@@ -186,6 +198,11 @@
 
         function is_password(asValue) {
             var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*]{8,20}$/;
+            return regExp.test(asValue);
+        }
+
+        function is_email(asValue) {
+            var regExp = /^(?=.*[@.])[0-9a-zA-Z@.]{6,50}$/;
             return regExp.test(asValue);
         }
 
@@ -303,7 +320,7 @@
                                             placeholder="이메일 입력">
                                         <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <p id="help-email" class="help">이메일을 입력해주세요.</p>
+                                    <p id="help-email" class="help is-hidden">이메일을 입력해주세요.</p>
 
                                 </div>
                             </div>
