@@ -111,6 +111,50 @@ function update_profile() {
         }
     });
 }
+
+function search(username) {
+    alert("버튼클릭");
+    if (username == undefined) {
+        username = ""
+    }
+    $("#post-box").empty()
+    $.ajax({
+        type: "GET",
+        url: `/get_posts?username_give=${username}`,
+        data: {},
+        success: function (response) {
+            if (response["result"] == "success") {
+                let posts = response["posts"]
+                for (let i = 0; i < posts.length; i++) {
+                    let post = posts[i]
+                    let time_post = new Date(post["date"])
+                    let time_before = time2str(time_post)
+                    let html_temp = `<div class="box" id="${post["_id"]}">
+                                    <article class="media">
+                                        <div class="media-left">
+                                            <a class="image is-64x64" href="/user/${post['username']}">
+                                                <img class="is-rounded" src="/static/${post['profile_pic_real']}"
+                                                    alt="Image">
+                                            </a>
+                                        </div>
+                                        <div class="media-content">
+                                            <div class="content">
+                                                <p>
+                                                    <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_before}</small>
+                                                </p>
+                                                <p style="white-space:pre-line;">
+                                                    ${post['todo']}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>`
+                    $("#post-box").append(html_temp)
+                }
+            }
+        }
+    })
+}
 // // get_posts 실행
 // $(document).ready(function () {
 // get_posts()
