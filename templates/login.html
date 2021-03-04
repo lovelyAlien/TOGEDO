@@ -40,10 +40,15 @@
         .title {
             font-weight: 800;
             font-size: 5rem;
-            font-family: 'Jua', sans-serif;
+            font-family: 'Do Hyeon', sans-serif;
         }
 
-        .subtitle {
+        .advice_{
+            color: white;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .sub {
             font-size: 1rem;
             font-family: 'Do Hyeon', sans-serif;
         }
@@ -241,6 +246,24 @@
             });
         }
 
+         $(document).ready(function () {
+            today_quote()
+        });
+
+        function today_quote() {
+            $.ajax({
+                type: "GET",
+                url: "https://api.adviceslip.com/advice",
+                data: {},
+                success: function (response) {
+                    res = JSON.parse(response)
+                    let data = res['slip']['advice']
+                    $('#todayquote').text(data);
+
+                }
+
+            })
+        }
     </script>
 
 </head>
@@ -248,8 +271,8 @@
 <body>
     <section class="hero is-black">
         <div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
-            <h1 class="title is-sparta">TOGEDO!</h1>
-            <h3 class="subtitle is-sparta">I know what you have to do</h3>
+            <h1 class="title is-sparta">TOGEDO!&nbsp<span class="sub">I know what you have to do</span></h1>
+            <p class="advice_"> Today's Quote: <span id="todayquote"> Just Do It!</span></p>
         </div>
     </section>
     <section class="section">
