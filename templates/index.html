@@ -19,7 +19,7 @@
     <!-- Font Awesome CSS -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet">
+    <link href="{{static_autoversion ( 'mystyle.css')}}" rel="stylesheet">
 
     <style>
         .search {

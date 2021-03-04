@@ -1,7 +1,7 @@
 body {
   background-color: rgba(246, 247, 216, 1);
   background-size: cover;
-  min-height: 100vh;
+  min-height: 1000vh;
   padding-top: 5rem;
 }
 
@@ -56,3 +56,4 @@ input::-webkit-calendar-picker-indicator {
 .navbar {
   background-color: black;
 }
+
