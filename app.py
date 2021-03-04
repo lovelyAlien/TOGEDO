@@ -17,7 +17,9 @@ Autoversion(app)
 SECRET_KEY = 'SPARTA'
 
 client = MongoClient('localhost', 27017)
+# client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.db_togedo
+
 
 
 @app.route('/')
