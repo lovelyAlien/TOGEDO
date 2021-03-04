@@ -113,7 +113,6 @@ function update_profile() {
 }
 
 function search(username) {
-    alert("버튼클릭");
     if (username == undefined) {
         username = ""
     }
