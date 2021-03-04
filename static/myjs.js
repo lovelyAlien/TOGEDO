@@ -1,12 +1,12 @@
 // 포스팅 함수
 function post() {
-    let comment = $("#textarea-post").val()
+    let todo = $("#textarea-post").val()
     let today = new Date().toISOString()
     $.ajax({
         type: "POST",
-        url: "/posting",
+        url: "/write_todo",
         data: {
-            comment_give: comment,
+            todo_give: todo,
             date_give: today
         },
         success: function (response) {
@@ -64,7 +64,7 @@ function get_posts(username) {
                                                     <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_before}</small>
                                                 </p>
                                                 <p style="white-space:pre-line;">
-                                                    ${post['comment']}
+                                                    ${post['todo']}
                                                 </p>
                                             </div>
                                         </div>

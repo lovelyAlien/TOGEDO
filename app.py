@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 SECRET_KEY = 'SPARTA'
 
 client = MongoClient('localhost', 27017)
-db = client.dbsparta_plus_week4
+db = client.db_togedo
 
 
 @app.route('/')
@@ -124,19 +124,19 @@ def save_img():
         return redirect(url_for("home"))
 
 
-@app.route('/posting', methods=['POST'])
-def posting():
+@app.route('/write_todo', methods=['POST'])
+def write_todo():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         user_info = db.users.find_one({"username": payload["id"]})
-        comment_receive = request.form["comment_give"]
+        todo_receive = request.form["todo_give"]
         date_receive = request.form["date_give"]
         doc = {
             "username": user_info["username"],
             "profile_name": user_info["profile_name"],
             "profile_pic_real": user_info["profile_pic_real"],
-            "comment": comment_receive,
+            "todo": todo_receive,
             "date": date_receive
         }
         db.posts.insert_one(doc)
